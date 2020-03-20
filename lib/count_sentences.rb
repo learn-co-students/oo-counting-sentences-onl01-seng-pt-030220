@@ -27,10 +27,19 @@ class String
   end
 
   def count_sentences
-    sentence_array = self.split(/\?|\.|!/)
-    sentence_array.delete_if{|sentence| sentence.empty?}
-    sentence_array.length
+    self.scan(/[^\.!?]+[\.!?]/).count
+     #using two intance methods, both .scan and .count on a regex
+    #reduces the method to one line of code.
+    #sentence_array = self.split(/[.?!]/)
+    #sentence_array.count
   end
 end
-#/ then question mark \? then "or" | then period(full-stop) \. then "or" | then exclamation point ! then / to end the expression.
+#/ then question mark \? then "or" | then period(full-stop)
+# \. then "or" | then exclamation point ! then / to end the expression.
 #becomes /\?|\.|!/ or (/\?|\.|!/)
+
+=begin
+sentence_array = self.split(/[.?!]/)
+    sentence_array.delete_if{|sentence| sentence.empty?}
+    sentence_array.count
+=end

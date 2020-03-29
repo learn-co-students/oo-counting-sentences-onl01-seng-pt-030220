@@ -34,6 +34,7 @@ end
   end
 end
 
+
 def count_sentences
   
  self.split(/\.|\?|\!/).delete_if {|x| x.size < 2}.size
@@ -45,6 +46,21 @@ def count_sentences
 
   end
   
+
+
+def count_sentences
+  
+  sentence_count = []
+# self.split(/\.|\?|\!/).each do |x|
+        
+#     sentence_count << x
+      
+    
+
+  self.split(/\.|\?|\!/).delete_if {|w| w.size < 2}.size
+
+  end
+
 
 
 end
